@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Target Finder</title>
+</head>
+<body>
+    <div>
+        <h1>Transition Target Finder</h1> 
+        <p>This online tool allows you to search the database described in <a href="">Holdship & Viti 2021</a>. This is a list of species transitions and ratios which are particularly informative about a given physical parameter and are insensitive to chemical history of the gas making them ideal probes of physical conditions. <a href="">Holdship & Viti 2021</a> gives a full explanation and an overview of the best transitions to observe but this tool will allow you to find the most informative species considering any observational limitations such as bandwidth or possible frequency ranges. </p>
+
+    <div class="explainer">
+        <h2> Form Inputs</h2>
+
+        <div class="row">
+            <div class="col-25">Minimum Frequency</div>
+            <div class="col-75">Minimum transition frequency in GHz</div>
+        </div>
+        <div class="row">
+            <div class="col-25">Maximum Frequency</div>
+            <div class="col-75">Minimum transition frequency in GHz</div>
+        </div>
+        <div class="row">
+            <div class="col-25">Frequency Difference</div>
+            <div class="col-75">Maximum difference between frequencies of transitions in a ratio in GHz</div>
+        </div>
+        <div class="row">
+            <div class="col-25">Target Parameter</div>
+            <div class="col-75">Physical parameter you would like to measure.</div>
+        </div>
+    </div>
+    <div class="explainer">
+        <h2>Form Outputs</h2>
+        <div class="row">
+            <div class="col-25">Feature</div>
+            <div class="col-75">Transitions to observe given as a species name and the frequency of the transition in GHz. Ratios are given as two transitions seperated by a /</div>
+        </div>
+        <div class="row">
+            <div class="col-25">Information</div>
+            <div class="col-75">Mutual information score between the feature and the target parameter. The larger this is, the more useful the transition.</div>
+        </div>
+    </div>
+    <div class="form-div">
+        <form action="check/" method="POST" class="form">
+        <div class="row">
+            <div class="col-25">
+                <label> Minimum Frequency</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="low_freq" value={{fmin}}>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label> Maximum Frequency</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="high_freq" value=1000.0>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label>Frequency Difference</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="delta_freq" value=1000.0>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label> Target Parameter</label>
+            </div>
+            <div class="col-75">
+                <select name="target" id="target">
+                    <option value="initialDens">Density</option>
+                    <option value="initialTemp">Gas Temperature</option>
+                    <option value="zeta">Cosmic Ray Ionization Rate</option>
+                    <option value="Av">Visual Extinction</option>
+                </select>
+            </div>
+        </div>
+        <input name="check" type="submit" value="Search">
+        </form>
+    </div>
+
+    <div >
+        <div>
+        {{ table|safe }}
+        </div>
+    </div>
+</body>
+</html>

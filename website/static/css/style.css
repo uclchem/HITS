@@ -1,0 +1,228 @@
+      :root {
+    --main-bg-color: #FBF9FA;
+    --text-color: #353935;
+    --brand:#4979AE;
+    --accent: #C4BDBE;
+  }
+
+body {
+  background-color: var(--main-bg-color);
+  text-align: center;
+  align-content: center;
+  align-items: center;
+
+}
+
+a {
+  text-decoration: none;
+  color:var(--brand);
+}
+
+h1 {
+    color: var(--brand);
+    text-align: center;
+    padding: 20px;
+    font-size: 400%
+}
+
+h2 {
+	color: var(--text-color);
+}
+h3 {
+  color: var(--text-color);
+}
+
+p{
+  color:var(--text-color);
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+
+}
+
+ul{
+  color:var(--text-color);
+}
+
+form{
+  color:var(--text-color);
+}
+
+ul.a{
+  color:var(--accent);
+}
+
+
+img{
+  width:100%;
+  height:auto;
+}
+
+form {
+  display: inline-block;
+}
+
+.form-div{
+  width:50%;
+  text-align: center;
+  align-content: center;
+  border-radius: 5px;
+  background-color: var(--accent);
+  margin-left: 25%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  align-self: center;
+  align-items: center;
+}
+
+input[type=submit]{
+  background-color: var(--brand);
+  width: 100%;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+label{
+  font-weight: bold;
+  display: inline-block;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  align-self: left;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+.explainer {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top:50px;
+  align-content: left;
+  text-align: left;
+}
+
+
+
+
+
+
+.general-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.general-table td, .general-table th {
+  border: 0px solid #ddd;
+  padding: 8px;
+}
+
+.general-table tr:nth-child(even){background-color: var(--brand);color: var(--main-bg-color)}
+
+.general-table tr:nth-child(odd){background-color: var(--white);}
+
+.general-table tr:hover {background-color: #ddd;}
+
+.general-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align:  center;
+  background-color: var(--brand);
+  color: white;
+}
+
+ /* Dropdown Button */
+.btn {
+  background-color: var(--brand);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: absolute;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.btn:hover, .dropdown:hover .btn  {
+  background-color: var(--primary);
+} 
+
+
+/* ==========================================================================
+   Mobile styles
+   ========================================================================== */
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  p{
+    margin-left:5%;
+    margin-right:5%;
+  }
+}
+
