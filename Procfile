@@ -1,0 +1,1 @@
+web: gunicorn app:target_finder

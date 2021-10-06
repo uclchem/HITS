@@ -41,3 +41,6 @@ def check(low_freq=0,high_freq=1000.0,delta_freq=1000.0):
 def search_result(low_freq,high_freq,delta_freq,target):
 	result_table=table_manager.get_filtered_table(low_freq,high_freq,delta_freq,target)
 	return render_template("index.html",table=result_table.to_html(classes="general-table",index=False),fmin=low_freq)
+
+if __name__ == "__main__":
+    app.run()
