@@ -1,1 +1,1 @@
-web: gunicorn app:target_finder
+web: gunicorn app:app
